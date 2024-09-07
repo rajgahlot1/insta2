@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import LoginPage from './LoginPage';
+import SignUpPage from './SignUpPage';
+import HomePage from './HomePage';
+import BirthPage from './BirthPage';
+import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap/dist/js/bootstrap.bundle.js";
+import './App.css'
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+} from "react-router-dom";
+import {FirebaseProvider} from "./Firebase";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default function App(){
+  return(
+    <FirebaseProvider>
+      <Router>
+        <Routes>
+          <Route path="/" element={<LoginPage />} />
+          <Route path="/SignUpPage" element={<SignUpPage />} />
+          <Route path="/HomePage" element={<HomePage />} />
+          <Route path="/BirthPage" element={<BirthPage />} />
+        </Routes>
+      </Router>
+    </FirebaseProvider>
+  )
 }
-
-export default App;
