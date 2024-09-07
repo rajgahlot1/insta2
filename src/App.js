@@ -17,10 +17,10 @@ export default function App(){
     <FirebaseProvider>
       <Router>
         <Routes>
-          <Route path="/" element={<LoginPage />} />
-          <Route path="/SignUpPage" element={<SignUpPage />} />
-          <Route path="/HomePage" element={<HomePage />} />
-          <Route path="/BirthPage" element={<BirthPage />} />
+          <Route path="/insta2" element={<LoginPage />} />
+          <Route path="/insta2/SignUpPage" element={<SignUpPage />} />
+          <Route path="/insta2/HomePage" element={<HomePage />} />
+          <Route path="/insta2/BirthPage" element={<BirthPage />} />
         </Routes>
       </Router>
     </FirebaseProvider>
