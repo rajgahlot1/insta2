@@ -5,9 +5,11 @@ import playstore from './img/playstore.png'
 // import auth from "./img/auth.png";
 import allimg from "./img/allimg.png";
 import LoginLayout from "./LoginLayout";
+import { useFirebase } from "./Firebase";
 export default function OtpPage() {
   const navigate = useNavigate();
   // OTP ko state me store karenge
+  const firebase  = useFirebase()
   const [generatedOtp, setGeneratedOtp] = useState('');
   const [userOtp, setUserOtp] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
@@ -26,6 +28,7 @@ export default function OtpPage() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    firebase.saveData();
 
     // User OTP ko compare karna generated OTP se
     if (userOtp === generatedOtp) {

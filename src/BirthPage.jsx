@@ -24,8 +24,7 @@ const maindob= `${dob.day}-${dob.month}-${dob.year}`;
     // Print the selected date of birth
     console.log(`Date of Birth: ${dob.day}-${dob.month}-${dob.year}`);
     console.log(maindob)
-firebase.savedob(maindob)
-firebase.saveData();
+await firebase.savedob(maindob)
     try {
       navigate("/insta2/OtpPage");
     } catch (err) {

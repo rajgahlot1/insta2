@@ -141,6 +141,7 @@ export const FirebaseProvider = (props) => {
     }
   };
   const savedob=(maindob)=>{
+    console.log('hello',maindob)
     setdob(maindob)
   }
   return (
