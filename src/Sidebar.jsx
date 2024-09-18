@@ -1,7 +1,7 @@
-import {Home,Explore,Reel,Create,Post,Live,Message,Profile,Search,Bar,Messenger,Like} from './ReelSvg';
-import { FaBars, FaRegHeart } from "react-icons/fa6";
+import {Home,Explore,Reel,Create,Post,Live,Message,Profile,Search,Bar,Like} from './ReelSvg';
+import {  FaRegHeart } from "react-icons/fa6";
 import { FiInstagram } from "react-icons/fi";
-import React,{useState,useContext} from 'react'
+import React,{useState} from 'react'
 import { useFirebase } from "./Firebase";
 import { useNavigate } from "react-router-dom";
 
@@ -28,11 +28,11 @@ export default function Sidebar() {
   }
   const handleLogOut= async()=>{
     await firebase.logout();
-    navigate('/');
+    navigate('/insta2');
   }
 
   const handleHome=()=>{
-    navigate('/');
+    navigate('/insta2');
   }
  const BootomArr = [
     { icon: <Home />,onClick:handleHome },
@@ -136,7 +136,7 @@ export default function Sidebar() {
       >
         {BootomArr.map((val, id) => {
           return (
-            <div key={id} className= {`${id===1 ||id==5  ? "d-none d-sm-block": ""} ${id===1  ? "d-block d-sm-none": ""}`} onClick={val.onClick}>
+            <div key={id} className= {`${id===1 ||id===5  ? "d-none d-sm-block": ""} ${id===1  ? "d-block d-sm-none": ""}`} onClick={val.onClick}>
               <span className='arrIconn'>{val.icon}</span>
             </div>
           );

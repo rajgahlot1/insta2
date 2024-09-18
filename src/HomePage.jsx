@@ -7,7 +7,7 @@ export default function HomePage(){
   const handleLogOut= async()=>{
     
     await firebase.logout();
-    navigate('/');
+    navigate('/insta2');
   }
   return(
     <>

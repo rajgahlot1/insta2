@@ -17,7 +17,7 @@ export default function LoginPage() {
 // yhA se hai 5 line ka auto login bala img
 useEffect(()=>{
   if(firebase.isLoggedIn){
-         navigate("/HomePage");
+         navigate("/insta2/HomePage");
   }
 },[firebase,navigate])
 
@@ -38,7 +38,7 @@ useEffect(()=>{
                 const resultofLogin= await firebase.loginWithEmailandPass(email, password);
           alert("Login successful");
     console.log("resultofLogin",resultofLogin)
-          navigate("/HomePage");
+          navigate("/insta2/HomePage");
      }catch(err){
         alert("Error: Something Went Wrong");
      }
@@ -178,7 +178,7 @@ useEffect(()=>{
               <span>Don't have a account? </span>
               <button className="fw-bold ms-1" 
                 style={{border:"none",color: "#0095f6",background:"none"}}
-                onClick={() => navigate("/SignUpPage")}
+                onClick={() => navigate("/insta2/SignUpPage")}
                 >
 
                 Sign up
@@ -189,7 +189,7 @@ useEffect(()=>{
               style={{ width: "350px" }}
             >
               <span style={{ color: "#000000", fontSize: "14px" }}>
-                Get the app.
+                Get the app. om namah sivay om namah sivay om namah sivay om namah sivay 
               </span>
             </div>
             <div

@@ -1,7 +1,6 @@
 {
   "name": "insta2",
   "homepage": "https://rajgahlot1.github.io/insta2",
-
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -11,9 +10,14 @@
     "bootstrap": "^5.3.3",
     "firebase": "^10.13.1",
     "gh-pages": "^6.1.1",
+    "nodemon": "^3.1.4",
+    "otp-input-react": "^0.3.0",
     "react": "^18.3.1",
+    "react-bootstrap": "^2.10.4",
     "react-dom": "^18.3.1",
+    "react-hot-toast": "^2.4.1",
     "react-icons": "^5.3.0",
+    "react-phone-input-2": "^2.15.1",
     "react-router": "^6.26.1",
     "react-router-dom": "^6.26.1",
     "react-scripts": "5.0.1",

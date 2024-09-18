@@ -46,7 +46,7 @@ const LoginLayout = ({children}) => {
     </div>
 
     {/* footer data */}
-    <div className="w-100 d-flex flex-column position-absolute  align-items-center justify-content-center flex-column" style={{bottom:"-150px"}}>
+    <div className="w-100 d-flex flex-column position-absolute  align-items-center justify-content-center flex-column" style={{bottom:"-550px"}}>
       <div
         className="fotter_data  d-flex align-items-center gap-4 justify-content-center"
         style={{ maxWidth: "1066px", flexWrap:"wrap" }}

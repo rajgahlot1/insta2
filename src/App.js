@@ -2,6 +2,8 @@ import LoginPage from './LoginPage';
 import SignUpPage from './SignUpPage';
 import HomePage from './HomePage';
 import BirthPage from './BirthPage';
+import OtpPage from './OtpPage';
+// import EmailPage from './EmailPage';
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap.bundle.js";
 import './App.css'
@@ -21,6 +23,8 @@ export default function App(){
           <Route path="/insta2/SignUpPage" element={<SignUpPage />} />
           <Route path="/insta2/HomePage" element={<HomePage />} />
           <Route path="/insta2/BirthPage" element={<BirthPage />} />
+          <Route path="/insta2/OtpPage" element={<OtpPage />} />
+          {/* <Route path="/EmailPage" element={<EmailPage />} /> */}
         </Routes>
       </Router>
     </FirebaseProvider>
