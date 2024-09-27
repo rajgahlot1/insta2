@@ -16,7 +16,7 @@ export default function SignUpPage() {
   const [hideShow, setHideShow] = useState(false);
   const [types, setTypes] = useState(false);
 
-  const [email, setEmail] = useState("");
+  const [numberoremail, setnumberorEmail] = useState("");
   const [password, setPassword] = useState("");
   const [fullname, setFullname] = useState("");
   const [username, setUsername] = useState("");
@@ -38,21 +38,22 @@ export default function SignUpPage() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    firebase.userData(email,fullname,username,password)
+    
+    firebase.userData(numberoremail,fullname,username,password)
     // Check if email and password are provided
    
        navigate("/insta2/BirthPage");
   };
 
   return (
-    <div>
+    
       <LoginLayout>
         <div className="col Second w-100 bg-" style={{ padding: "13px 33px" }}>
           <div
             className="Login_data bg- d-flex align-items-center justify-content-center flex-column gap-2"
             style={{
               width: "350px",
-              height: "606px",
+              height: "621px",
               border: "1px solid #bdbdbd",
             }}
           >
@@ -116,11 +117,11 @@ export default function SignUpPage() {
             <form onSubmit={handleSubmit} className="d-flex align-items-center flex-column justify-content-center">
               <div className="input-container">
                 <input
-                  onChange={(e) => setEmail(e.target.value)}
-                  value={email}
-                  type="email"
+                  onChange={(e) => setnumberorEmail(e.target.value)}
+                  value={numberoremail}
+                  type="text"
                   style={{ width: "270px" }}
-                  placeholder=" "
+                  placeholder=""
                   name="email"
                   autoComplete="on"
                   id="inputs"
@@ -251,6 +252,6 @@ export default function SignUpPage() {
           </div>
         </div>
       </LoginLayout>
-    </div>
+    
   );
 }

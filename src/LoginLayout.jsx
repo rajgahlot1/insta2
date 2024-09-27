@@ -23,8 +23,8 @@ const LoginLayout = ({children}) => {
   return (
     <>
     <div
-      className="Main_container bg- w-100 d-flex align-items-center justify-content-center"
-      style={{ height: "663.98px" }}
+      className="Main_container bg- w-100 d-flex  justify-content-center"
+      style={{ height: "850.98px" }}
     >
       <div
         className="Second_main bg- d-flex "
@@ -46,7 +46,7 @@ const LoginLayout = ({children}) => {
     </div>
 
     {/* footer data */}
-    <div className="w-100 d-flex flex-column position-absolute  align-items-center justify-content-center flex-column" style={{bottom:"-550px"}}>
+    <div className="w-100 d-flex flex-column   align-items-center justify-content-center flex-column" style={{bottom:"-550px"}}>
       <div
         className="fotter_data  d-flex align-items-center gap-4 justify-content-center"
         style={{ maxWidth: "1066px", flexWrap:"wrap" }}

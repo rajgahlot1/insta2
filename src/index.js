@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom/client'
 // import OTPComponent from './OTPService'
 // import OTPVerification from './OTPForm'
 import App from './App'
+// import SearchComponent from './component/SearchComponent'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
 	<React.StrictMode>

@@ -13,6 +13,15 @@ export default function OtpPage() {
   const [generatedOtp, setGeneratedOtp] = useState('');
   const [userOtp, setUserOtp] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
+const [numtype,setnumType]= useState(false)
+  const [emailtype,setemailType]= useState(false)
+const numberoremail= firebase.numberoremail;
+const isNumber = /^\d+$/.test(numberoremail);
+
+// Regular expression to check if the input is a valid email
+const isEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(numberoremail);
+
+
 
   // OTP generate karne ka function
   const generateOtp = () => {
@@ -23,6 +32,14 @@ export default function OtpPage() {
 
   // Page load hone par OTP generate karna
   useEffect(() => {
+    if (isNumber) {
+    setnumType(true);
+  } else if (isEmail) {
+    setemailType(true);
+  } else {
+    navigate("/insta2/SignUpPage")
+    alert("Enter valid number or email");
+  }
     generateOtp(); // Page load hone par OTP generate karega
   }, []);
 
@@ -32,9 +49,17 @@ export default function OtpPage() {
 
     // User OTP ko compare karna generated OTP se
     if (userOtp === generatedOtp) {
+      // if(!firebase.user)
       
-      alert("OTP Sahi hai! Home page par navigate ho rahe hain.");
-      navigate("/insta2/HomePage");
+        // console.log("hello raj gahlot")
+        // navigate("/insta2/SignUpPage ")
+        // alert("Invalid user credential");
+       
+    
+        // alert("OTP Sahi hai! Home page par navigate ho rahe hain.");
+        navigate("/insta2/HomePage");
+      
+      
     } else {
       setErrorMessage("Invalid OTP");
     }
@@ -81,9 +106,14 @@ export default function OtpPage() {
                 Just one more step
               </span>
               <span className="d-flex flex-column text-center">
-                <span className="d-flex">
-                  <span style={{ color: "black", fontSize: "14px" }}>Enter the 6-digit code we sent to:</span>
-                  <span style={{ fontSize: "14px", color: "#0095f6" }}>7983925369</span>
+              <span className="d-flex">
+                 
+              {numtype && (  <span className="d-flex flex-column"> <span style={{ color: "black", fontSize: "14px" }}>Enter the 6-digit code we sent to : </span>
+                  <span style={{ fontSize: "14px", color: "#0095f6" }}>{numberoremail}</span>
+                  </span>)}
+                {emailtype && (   <span className="d-flex flex-column"><span style={{ color: "black", fontSize: "14px" }}>Enter the 6-digit code we sent to : </span>
+                  <span style={{ fontSize: "14px", color: "#0095f6" }}>{numberoremail}</span>
+                  </span>)}
                 </span>
                 <span style={{ fontSize: "13px", color: "red" }}>{generatedOtp}</span>
               </span>
@@ -120,7 +150,7 @@ export default function OtpPage() {
                 <button
                   style={{ color: "#0095f6", border: "none", background: "none", fontSize: "14px", fontWeight: "600" }}
                 >
-                  <span>Change number</span>
+                  <span>{emailtype && ("Change Email")} {numtype && ("Change Number")}</span>
                 </button>
                 |
                 <button
